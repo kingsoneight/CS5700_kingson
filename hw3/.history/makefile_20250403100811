@@ -1,0 +1,18 @@
+# Makefile for spock network game
+
+CC      = gcc
+CFLAGS  = -Wall -Wextra -O2
+TARGETS = spock_server spock_client
+
+all: $(TARGETS)
+
+spock_server: spock_server.c
+	$(CC) $(CFLAGS) -o spock_server spock_server.c
+
+spock_client: spock_client.c
+	$(CC) $(CFLAGS) -o spock_client spock_client.c
+
+clean:
+	rm -f $(TARGETS)
+
+.PHONY: all clean
